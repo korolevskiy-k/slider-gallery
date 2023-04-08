@@ -6,6 +6,14 @@ const slidesCount = mainSlide.querySelectorAll('div').length;
 const container = document.querySelector('.container');
 let activeSlideIndex = 0;
 
+document.addEventListener('keydown', event => {
+    if (event.key === 'ArrowUp') {
+        changeSlide('up');
+    } else if (event.key === 'ArrowDown') {
+        changeSlide('down');
+    }
+})
+
 sidebar.style.top = `-${(slidesCount - 1) * 100}vh`;
 upButton.addEventListener('click', () => {
     changeSlide('up');
